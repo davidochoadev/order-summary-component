@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+:root {
+   --pale-blue: hsl(225, 100%, 94%);
+   --bright-blue: hsl(245, 75%, 52%);
+
+   --very-pale-blue: hsl(225, 100%, 98%);
+   --desaturated-blue: hsl(224, 23%, 55%);
+   --dark-blue: hsl(223, 47%, 23%);
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   color: var(--dark-blue);
+   box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: var(--pale-blue) url('../images/pattern-background-mobile.svg') no-repeat top left;
+    background-size: 100%;
+    display: grid;
+    place-items: center;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+.main__container {
+    display: grid;
+    grid-template-rows: 170px auto;
+    width: 90%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 10px 20px 0 rgba(0,0,0, 0.2);
+}
+/*
+   PICTURE
+*/
+   .main__container > picture > img {
+      width: 100%;
+   }
+   .main__container > picture {
+      overflow: hidden;
+   }
+/* 
+   SECTION CONTAINER
+*/
+.section__container {
+   padding: 15px;
+   display: grid;
+   place-items: center;
+   height: 100%;
+}
+
+.section__container > .section__main-title {
+   font-size: 22px;
+   font-weight: 900;
+}
+
+.section__container > .section__description {
+   width: 80%;
+   font-size: 14px;
+   text-align: center;
+   color: var(--desaturated-blue);
+}
+
+.section__container > .section__plan-selector {
+   display: flex;
+   padding: 10px;
+   gap: 10px;
+   width: 85%;
+   justify-content: space-around;
+   align-items: center;
+   background-color: #F8F9FE;
+   border-radius: 10px;
+   font-size: 12px;
+   height: 65px;
+}
+
+.section__container > .section__plan-selector > .annual-plan {
+   display: flex;
+   gap: 10px;
+   font-weight: 600;
+}
+
+.section__container > .section__plan-selector > .annual-plan > img {
+   border-radius: 50%;
+   height: 35px;
+}
+
+.section__container > .section__plan-selector > .annual-plan  > div {
+   font-weight: 900;
+}
+
+.section__container > .section__plan-selector > .annual-plan  > div > span {
+   display: block;
+   font-weight: normal;
+   color: var(--desaturated-blue);
+}
+
+.section__container > .section__plan-selector > .section__plan-changer {
+   color: var(--bright-blue);
+   font-weight: 700;
+}
+
+.section__container > .section__plan-selector > .section__plan-changer:hover {
+   color: var(--desaturated-blue);
+}
+
+.section__container > .proceed__button {
+   all: unset;
+   text-align: center;
+   width: 70%;
+   height: 35px;
+   font-size: .85em;
+   background-color: var(--bright-blue);
+   color: var(--very-pale-blue);
+   border-radius: 10px;
+   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+   font-weight: 900;
+   padding: 5px 25px;
+   cursor: pointer;
+}
+.section__container > .cancel__button {
+   margin: 10px 0;
+   font-size: 11px;
+   font-weight: 600;
+   color: var(--desaturated-blue);
+   cursor: pointer;
+}
+.section__container > .proceed__button:hover {
+   background-color: var(--desaturated-blue);
+}
+.section__container > .cancel__button:hover {
+   color: var(--dark-blue);
+}
+button, img, .change-plan, .cancel__button {
+   transition: all .7s ease !important;
+}
+.main__container:hover > picture > img{
+   transform: scale(1.2);
+   z-index: -1;
+}
+
+/* 
+   FOOTER SECTION
+*/
+   .author__section{
+      position: fixed;
+      bottom: 0;
+      padding-bottom: 15px;
+      z-index: 1;
+      width: 100%;
+      text-align: center;
+   }
+   .author__section > * {
+      color: var(--dark-blue);
+      font-weight: 500;
+   }
+   .author__section > .author__spacer {
+      margin: 0 4px 0 4px;
+   }
+   .author__section, a {
+      text-decoration: none;
+      transition: .3s ease-out;
+   }
+   .author__section > .author__anchor:hover {
+      color: var(--bright-blue);
+   }
+
+@media screen and (min-width: 375px) {
+
+    body {
+        background: var(--pale-blue) url('../images/pattern-background-desktop.svg') no-repeat top left;
+        background-size: 100%;
+    }
+
+    .main__container {
+        width: 350px;
+    }
+}
